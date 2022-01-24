@@ -14,8 +14,15 @@ const styles = {
         flex: '1',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        margin: '20px 10px',
+    },
+    create:{
+        display: 'flex',
+        flexDirection: 'column',
+        border: '1px solid #eaeaea',
+        padding: '2rem',
+        borderRadius: '10px',
+        maxWidth: '600px',
     },
     title: {
         fontSize: '3rem',
@@ -33,26 +40,68 @@ const styles = {
     },
     input: {
         width: '100%',
-        padding: '1rem',
+        padding: '10px',
         marginBottom: '1rem',
         border: '1px solid #ccc',
-        borderRadius: '4px',
+        borderRadius: '25px',
         fontSize: '1rem',
+        cursor: 'pointer',
+
     },
     button: {
         width: '100%',
         padding: '1rem',
         border: '1px solid #ccc',
-        borderRadius: '4px',
-        fontSize: '1rem',
+        borderRadius: '50px',
+        fontSize: '20px',
         cursor: 'pointer',
-        backgroundColor: '#fff',
-        color: '#000',
+        backgroundColor: 'yellowgreen',
+        color: '#fff',
         transition: 'all .2s ease-in-out',
         '&:hover': {
             backgroundColor: '#ccc',
             color: '#fff',
         }
-  }
+    },
+    wholePage: {
+        backgroundColor: '#f5f5f5',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+        fontSize: '1rem',
+        lineHeight: '1.5',
+        color: '#212529',
+    },
+    contLog:{
+        //background is nature
+        backgroundImage: 'url(https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '100vh',
+    }
+    ,
+    containerLogin: {
+        display: "flex",
+        flexDirection: "column",
+        height: "fit-content",
+        fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        fontSize: "1rem",
+        lineHeight: "1.5",
+        minWidth: "250px",
+        padding: "20px",
+        borderRadius: "10px",
+        justifyContent: 'center',
+        alignItems: 'center',
+        border: '1px solid white',
+        //glassmorphing
+        backgroundColor: 'rgba(255,255,255,0.5)',
+        marginTop: '15vh',
+    },
 }
 export default styles;

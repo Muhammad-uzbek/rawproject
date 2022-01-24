@@ -1,29 +1,44 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/appStyle.js';
-import axios from 'axios';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import Head from 'next/head'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperComponent from '../components/swiper';
+import Img1 from '../assets/images/picture1.jpg';
+import Img2 from '../assets/images/picture2.jpg';
+import Img3 from '../assets/images/picture3.jpg';
+import Img4 from '../assets/images/picture4.jpg';
+import Img5 from '../assets/images/picture5.jpg';
+import Img6 from '../assets/images/picture6.jpg';
+import Img7 from '../assets/images/picture7.jpg';
+import Img8 from '../assets/images/picture8.jpg';
+import Img9 from '../assets/images/picture9.jpg';
+// Import Swiper styles
 
 export default function Home() {
-//create a function that will post to /adminniy and return a response with cors
+  const [slides, setSlides] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:5000/getallslides', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setSlides(data);
+      })
+      .catch(err => console.log(err));
+  }, []);
   return (
-    <div className={styles.container}>
-      {/* create a form input that takes title, content, link and image and post it to /adminniy */}
+    <div>
       <Head>
-        <title>Create a post</title>
+        <title>Zamin Mobile</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Информация о тарифах и пакетах для мобильного интернета Zamin Mobile" />
+        <meta name="keywords" content="мобильного интернета, Zamin Mobile, тарифи" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Create a post
-        </h1>
-        <form className={styles.form}>
-          <input className={styles.input} type="text" placeholder="Title" />
-          <input className={styles.input} type="text" placeholder="Content" />
-          <input className={styles.input} type="text" placeholder="Link" />
-          <input className={styles.input} type="text" placeholder="Image" />
-          <button className={styles.button} type="submit">Submit</button>
-        </form>
-      </main>
+      <SwiperComponent slideItems={slides}/>
     </div>
   )
 }
